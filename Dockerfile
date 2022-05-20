@@ -2,6 +2,7 @@ FROM node:16 as installer
 COPY . /juice-shop
 WORKDIR /juice-shop
 RUN npm i -g typescript ts-node
+RUN npm install --save core-js@^2.5.0
 RUN npm install --production --unsafe-perm
 RUN npm dedupe
 RUN rm -rf frontend/node_modules
